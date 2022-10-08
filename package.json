@@ -1,0 +1,31 @@
+{
+	"name": "frontend",
+	"type": "module",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"lint": "eslint",
+		"astro": "astro",
+		"sync": "npx tsconfig-multiple-extends ./tsconfig.base.json -xt ../../packages/typescript-config/astro.json -sv ./tsconfig.json && npm run i18n",
+		"i18n": "npx astro-i18next generate && prettier --write \"src/pages/**/*.astro\""
+	},
+	"dependencies": {
+		"astro": "^1.4.5",
+		"astro-i18next": "1.0.0-beta.12",
+		"i18next": "^21.10.0",
+		"i18next-fs-backend": "^1.1.5",
+		"npm": "^8.19.2"
+	},
+	"devDependencies": {
+		"astro-eslint-parser": "^0.7.1",
+		"eslint": "^8.23.1",
+		"eslint-plugin-astro": "^0.20.0",
+		"prettier": "^2.7.1",
+		"prettier-plugin-astro": "^0.5.5",
+		"tsconfig-multiple-extends": "^1.1.2"
+	}
+}
